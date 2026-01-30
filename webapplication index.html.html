@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Word of the Day</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            width: 340px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .word {
+            font-size: 32px;
+            font-weight: bold;
+            color: #e67e22;
+            margin: 15px 0;
+        }
+
+        .meaning {
+            color: #555;
+            font-size: 16px;
+        }
+
+        .example {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 18px;
+            font-size: 15px;
+            background: #e67e22;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #d35400;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>📖 Word of the Day</h1>
+
+    <div class="word" id="word">Inspire</div>
+    <div class="meaning" id="meaning">To motivate or encourage someone.</div>
+    <div class="example" id="example">"Her story inspired everyone in the room."</div>
+
+    <button onclick="nextWord()">Next Word</button>
+</div>
+
+<script>
+    const words = [
+        {
+            word: "Inspire",
+            meaning: "To motivate or encourage someone.",
+            example: "Her story inspired everyone in the room."
+        },
+        {
+            word: "Resilient",
+            meaning: "Able to recover quickly from difficulties.",
+            example: "She remained resilient despite challenges."
+        },
+        {
+            word: "Grateful",
+            meaning: "Feeling thankful or appreciative.",
+            example: "He was grateful for the support he received."
+        },
+        {
+            word: "Ambition",
+            meaning: "A strong desire to achieve something.",
+            example: "Her ambition drove her to succeed."
+        },
+        {
+            word: "Consistent",
+            meaning: "Acting the same way over time; reliable.",
+            example: "Consistency is the key to success."
+        }
+    ];
+
+    function nextWord() {
+        const randomIndex = Math.floor(Math.random() * words.length);
+        document.getElementById("word").innerText = words[randomIndex].word;
+        document.getElementById("meaning").innerText = words[randomIndex].meaning;
+        document.getElementById("example").innerText = `"${words[randomIndex].example}"`;
+    }
+</script>
+
+</body>
+</html>
